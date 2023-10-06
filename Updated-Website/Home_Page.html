@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="CSS/greyStyle.css">
+  <style>
+    body {
+      background-image: url('Images/Backgrounds/background_cyberpunk.jpg');
+      background-size: cover; /* Adjust as needed */
+      min-height: 100vh; /* Adjust as needed */
+      min-width: 100vw;
+    }
+  </style>
+  <title>Navigation page</title>
+</head>
+  <body>
+      <div class="content">
+        <div class="left-column">
+          <div class="general">
+            <h2>General</h2>
+            <div class="row">
+              <script>
+                const generalCards = [
+                  {
+                    title: "HTML Tutorial page",
+                    imageUrl: "Images/w3school.png",
+                    linkUrl: "https://www.w3schools.com/html/default.asp"
+                  },
+                  {
+                    title: "Google",
+                    imageUrl: "Images/Google.png",
+                    linkUrl: "https://www.google.com/"
+                  },
+                  {
+                    title: "Gmail",
+                    imageUrl: "Images/Gmail.png",
+                    linkUrl: "https://mail.google.com/mail/u/0/#inbox"
+                  },
+                  {
+                    title: "Google Drive",
+                    imageUrl: "Images/googledrive.png",
+                    linkUrl: "https://drive.google.com/drive/my-drive"
+                  },                
+                  {
+                    title: "Budget",
+                    imageUrl: "Images/Budget.jpg",
+                    linkUrl: "https://docs.google.com/spreadsheets/d/1IMlbig4RhKzy3zWSN6_fVd1DX8SOmu4fLRYREn7p6Pk/edit#gid=1778981258"
+                  }
+                ];
+
+                const generalContainer = document.querySelector(".general .row");
+
+                generalCards.forEach(cardData => {
+                  const cardElement = createCard(cardData.title, cardData.imageUrl, cardData.linkUrl);
+                  const columnElement = document.createElement("div");
+                  columnElement.classList.add("column");
+                  columnElement.appendChild(cardElement);
+                  generalContainer.appendChild(columnElement);
+                });
+
+                function createCard(title, imageUrl, linkUrl) {
+                  const card = document.createElement("div");
+                  card.classList.add("card");
+
+                  const link = document.createElement("a");
+                  link.href = linkUrl;
+                  link.target = "_blank";
+
+                  const image = document.createElement("img");
+                  image.src = imageUrl;
+                  image.alt = title;
+
+                  const cardBody = document.createElement("div");
+                  cardBody.classList.add("card-body");
+
+                  const cardText = document.createElement("h4");
+                  cardText.classList.add("card-text");
+                  const cardLink = document.createElement("a");
+                  cardLink.href = linkUrl;
+                  cardLink.target = "_blank";
+                  cardLink.textContent = title;
+
+                  cardText.appendChild(cardLink);
+                  cardBody.appendChild(cardText);
+
+                  link.appendChild(image);
+                  card.appendChild(link);
+                  card.appendChild(cardBody);
+
+                  return card;
+                }
+              </script>
+            </div>
+          </div>
+
+          <div class="education">
+            <h2>Education</h2>
+            <div class="row">
+              <script>
+                const educationCards = [
+                  {
+                    title: "LinkedIn Learning",
+                    imageUrl: "Images/LinkedInLearning.png",
+                    linkUrl: "https://www.linkedin.com/learning/me?u=56684793"
+                  },
+                  {
+                    title: "Udemy",
+                    imageUrl: "Images/Udemy.png",
+                    linkUrl: "https://www.udemy.com/"
+                  },
+                ];
+
+                const educationContainer = document.querySelector(".education .row");
+
+                educationCards.forEach(cardData => {
+                  const cardElement = createCard(cardData.title, cardData.imageUrl, cardData.linkUrl);
+                  const columnElement = document.createElement("div");
+                  columnElement.classList.add("column");
+                  columnElement.appendChild(cardElement);
+                  educationContainer.appendChild(columnElement);
+                });
+              </script>
+            </div>
+          </div>
+
+          <div class="learning">
+            <h2>Learning</h2>
+            <div class="row">
+              <script>
+                const learningCards = [
+                  {
+                    title: "Watch Chess",
+                    imageUrl: "Images/watchChess.png",
+                    linkUrl: "https://www.youtube.com/user/AGADMATOR"
+                  },
+                  {
+                    title: "Play Chess",
+                    imageUrl: "Images/playChess.jpg",
+                    linkUrl: "https://www.chess.com/home"
+                  },
+                  {
+                    title: "TED-Ed Riddles",
+                    imageUrl: "Images/TEDEd_logo_square2.jpg",
+                    linkUrl: "https://www.youtube.com/watch?v=N5vJSNXPEwA&list=PLJicmE8fK0EiFRt1Hm5a_7SJFaikIFW30"
+                  },
+                  {
+                    title: "Explain it like I'm 5",
+                    imageUrl: "Images/reddit.png",
+                    linkUrl: "https://www.reddit.com/r/explainlikeimfive/"
+                  },
+                  {
+                    title: "Typing Practice",
+                    imageUrl: "Images/typing.jpg",
+                    linkUrl: "https://www.typingclub.com/sportal/"
+                  },
+                  {
+                    title: "Card Tricks",
+                    imageUrl: "Images/cards.jpg",
+                    linkUrl: "https://www.youtube.com/channel/UCh2LlYBpQRtjWg8PQWp_sCw"
+                  }                
+                ];
+
+                const learningContainer = document.querySelector(".learning .row");
+
+                learningCards.forEach(cardData => {
+                  const cardElement = createCard(cardData.title, cardData.imageUrl, cardData.linkUrl);
+                  const columnElement = document.createElement("div");
+                  columnElement.classList.add("column");
+                  columnElement.appendChild(cardElement);
+                  learningContainer.appendChild(columnElement);
+                });
+              </script>
+            </div>
+          </div>
+
+          <div class="compsci">
+            <h2>Computer Science</h2>
+            <div class="row">
+              <script>
+                const compsciCards = [
+                  {
+                    title: "LeetCode",
+                    imageUrl: "Images/LeetCode.png",
+                    linkUrl: "https://leetcode.com/problemset/all/?listId=wpwgkgt"
+                  },
+                  {
+                    title: "Competitive Coding",
+                    imageUrl: "Images/coding.png",
+                    linkUrl: "https://www.youtube.com/watch?v=xAeiXy8-9Y8"
+                  },
+                  {
+                    title: "Geeks for Geeks",
+                    imageUrl: "Images/GeeksforGeeks.png",
+                    linkUrl: "https://www.geeksforgeeks.org/"
+                  },
+                  {
+                    title: "Bash Commands",
+                    imageUrl: "Images/ubuntu.jpg",
+                    linkUrl: "https://cheatography.com/tag/bash/"
+                  },
+                  {
+                    title: "Wargames",
+                    imageUrl: "Images/wargames.jpg",
+                    linkUrl: "https://overthewire.org/wargames/"
+                  },
+                  {
+                    title: "Stack Overflow",
+                    imageUrl: "Images/stackoverflow.png",
+                    linkUrl: "https://stackoverflow.com/"
+                  }
+                ];
+              
+                const compsciContainer = document.querySelector(".compsci .row");
+
+                compsciCards.forEach(cardData => {
+                  const cardElement = createCard(cardData.title, cardData.imageUrl, cardData.linkUrl);
+                  const columnElement = document.createElement("div");
+                  columnElement.classList.add("column");
+                  columnElement.appendChild(cardElement);
+                  compsciContainer.appendChild(columnElement);
+                });
+                </script>
+            </div>
+          </div>
+        </div>
+        <div class="right-column">
+          <div class="news">
+            <h2>News</h2>
+            <div class="row" id="news-cards">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <script>
+    // News cards data
+    const newsCards = [
+      {
+        title: "Coder Career",
+        imageUrl: "Images/Coder Career.png",
+        linkUrl: "http://codercareer.blogspot.com/"
+      },
+      {
+        title: "Comp Sci News",
+        imageUrl: "Images/ScienceDaily.jpg",
+        linkUrl: "https://www.sciencedaily.com/news/computers_math/computer_science/"
+      },
+      {
+        title: "Google News",
+        imageUrl: "Images/googlenews.png",
+        linkUrl: "https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en"
+      }
+      // Add more news card objects as needed
+    ];
+
+    // Container for news cards
+    const newsContainer = document.getElementById("news-cards");
+
+    // Function to create news card element
+    function createNewsCard(title, imageUrl, linkUrl, description) {
+      const card = document.createElement("div");
+      card.classList.add("card");
+
+      const link = document.createElement("a");
+      link.href = linkUrl;
+      link.target = "_blank";
+
+      const image = document.createElement("img");
+      image.src = imageUrl;
+      image.alt = title;
+
+      const cardBody = document.createElement("div");
+      cardBody.classList.add("card-body");
+
+      const cardText = document.createElement("h4");
+      cardText.classList.add("card-text");
+      const cardLink = document.createElement("a");
+      cardLink.href = linkUrl;
+      cardLink.target = "_blank";
+      cardLink.textContent = title;
+
+      cardText.appendChild(cardLink);
+      cardBody.appendChild(cardText);
+
+      link.appendChild(image);
+      card.appendChild(link);
+      card.appendChild(cardBody);
+
+      return card;
+    }
+
+    // Generate news cards
+    newsCards.forEach(cardData => {
+      const cardElement = createCard(cardData.title, cardData.imageUrl, cardData.linkUrl);
+      cardElement.style.height = "190px"; // Set the desired height here
+
+      const columnElement = document.createElement("div");
+      columnElement.classList.add("column");
+      columnElement.appendChild(cardElement);
+      newsContainer.appendChild(columnElement);
+    });
+  </script>
+  </body>
+</html>
